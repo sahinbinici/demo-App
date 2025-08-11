@@ -1,17 +1,19 @@
 pipeline {
     agent any
+
     tools {
-        maven 'maven3''  // Jenkins Global Tool Configuration'da tanımladığın Maven ismi
-        jdk 'Java17'    // Jenkins Global Tool Configuration'da tanımladığın JDK ismi
+        maven 'maven3'
+        jdk 'java17'
     }
+
     environment {
-        NEXUS_CREDENTIALS = credentials('nexus-creds')  // Jenkins'de eklediğin credentials ID'si
+        NEXUS_CREDENTIALS = credentials('nexus-creds')
     }
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sahinkinici/demo-app.git'
-
+                git branch: 'main', url: 'https://github.com/sahinbinici/demo-App.git'
             }
         }
         stage('Build & Test') {
@@ -38,6 +40,7 @@ pipeline {
             }
         }
     }
+
     post {
         success {
             echo "Pipeline başarıyla tamamlandı!"
@@ -47,4 +50,3 @@ pipeline {
         }
     }
 }
-
