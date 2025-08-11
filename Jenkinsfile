@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven'  // Jenkins Global Tool Configuration'da tanımladığın Maven ismi
+        maven 'mave3n'  // Jenkins Global Tool Configuration'da tanımladığın Maven ismi
         jdk 'Java17'    // Jenkins Global Tool Configuration'da tanımladığın JDK ismi
     }
     environment {
